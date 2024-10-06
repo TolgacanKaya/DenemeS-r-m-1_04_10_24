@@ -1,0 +1,33 @@
+﻿@using DenemeSürümü1_04_10_24.Models
+@model List<Urun>
+@{
+    ViewBag.Title = "Index";
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ad</th>
+            <th>Stok</th>
+            <th>Fiyat</th>
+            <th>Kategori ID</th>
+            <th>Kategori Ad</th>
+            <th>Marka</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.UrunID</td>
+                <td>@item.UrunAD</td>
+                <td>@item.Stok</td>
+                <td>@item.Fiyat</td>
+                <td>@item.KategoriID</td>
+                <td>@item.KategoriAd</td>
+                <td>@item.Marka</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -32,5 +32,28 @@ namespace DenemeSürümü1_04_10_24.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public ActionResult KategoriGuncelleme(int KategoriID)
+        {
+            context db = new context();
+            string KategoriAD = db.Kategoriler.Find(KategoriID).CategoryName;
+            ViewBag.KategoriName = KategoriAD;
+            ViewBag.KategoriID = KategoriID;
+            return View();
+
+        }
+        [HttpPost]
+
+        public  ActionResult KategoriGuncelleme(string KategoriAD,int KategoriID)
+        {
+            context db = new context();
+            var Kategori = db.Kategoriler.Find(KategoriID);
+            Kategori.CategoryName = KategoriAD;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
+
+
 }

@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "KategoriGuncelleme";
+}
+
+<form action="/Kategori/KategoriGuncelleme" method="post">
+    <input type="hidden" value="@ViewBag.KategoriID" name="KategoriID"/>
+    <input type="text" value="@ViewBag.KategoriName" name="KategoriAD">
+    <button type="submit">Güncelle</button>
+</form>
+
